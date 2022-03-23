@@ -23,7 +23,7 @@
 
 ### 布局
   - 基础布局`basisTemplate` 路径`src/layout/BasisTemplate.vue`
-  - 基础布局`errorTemplate` 路径`src/layout/ErrorTemplate.vue`
+  - 404页面`errorTemplate` 路径`src/layout/ErrorTemplate.vue`
 
 ### 样式
   - 使用 `normalize.css` 初始化页面样式 
