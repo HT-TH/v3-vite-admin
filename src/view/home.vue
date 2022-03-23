@@ -1,52 +1,40 @@
 <template>
-  <h1>{{ msg }}</h1>
-
-  <p>
-    Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-  </p>
-
-  <p>See <code>README.md</code> for more information.</p>
-
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Docs
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-  </p>
-
-  <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <section class="container">
+    <el-space direction="vertical" :size="10">
+      <img src="../assets/images/shiba.jpg" class="photo" alt="">
+      <span>名称：柴犬</span>
+      <span>日文名：柴犬（读音：Shibainu）</span>
+      <span>点赞数：{{state.count}}</span>
+      <el-button @click="handleClick" type="primary" round>
+        <svg-icon name="great" width="28" height="28"></svg-icon>
+        点赞
+      </el-button>
+    </el-space>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+  import { Plus } from '@element-plus/icons-vue'
+  import { storeToRefs } from 'pinia'
+  import useCount from '../store/count'
+  const counter = useCount()
+  const { state } = storeToRefs(counter)
 
-defineProps<{ msg: string }>()
-
-const count = ref(0)
+  function handleClick() {
+    counter.handleAdd()
+  }
 </script>
 
-<style scoped>
-a {
-  color: #42b983;
-}
-
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+<style lang="scss" scoped>
+.container {
+  @include centered-flex;
+  flex-direction: column;
+  text-align: center;
+  .photo {
+    width: 200px;
+  }
+  svg { 
+    margin-right: 10px;
+  }
 }
 </style>

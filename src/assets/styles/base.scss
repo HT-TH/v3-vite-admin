@@ -1,0 +1,42 @@
+// 主题颜色
+$theme-color: #1890ff;
+// 主题颜色反色
+$theme-color-reverse: #40a9ff;
+
+// 行为相关颜色
+$color-primary: #007aff;
+$color-success: #4cd964;
+$color-warning: #f0ad4e;
+$color-error: #dd524d;
+
+// 文字颜色
+$text-color-3: #333333;
+$text-color-6: #666666;
+$text-color-9: #999999;
+$text-color-white: #ffffff;
+$text-color-black: #000000;
+
+// 统一圆角尺寸
+$border-radius: 16rpx;
+
+// 适用于外部元素的居中
+@mixin centered-flex {
+  & {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// 适用于大多数场景的居中
+@mixin centered-margin {
+  margin: 0 auto;
+}
+
+// 使用定位的居中
+@mixin centered-position {
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,13 +1,28 @@
 import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
+import BasisTemplate from '../layout/BasisTemplate.vue'
+import ErrorTemplate from '../layout/ErrorTemplate.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    component: () => import('../view/home.vue')
+    name: 'home',
+    component: () => BasisTemplate,
+    children: [
+      {
+        path: '',
+        component: () => import('../view/home.vue')
+      },
+      {
+        path: '/about',
+        name: 'about',
+        component: () => import('../view/about.vue')
+      }
+    ]
   },
   {
-    path: '/about',
-    component: () => import('../view/about.vue')
+    path: '/:w+',
+    name: 'error',
+    component: ErrorTemplate
   }
 ] 
 

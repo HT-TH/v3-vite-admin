@@ -1,11 +1,30 @@
-# Vue 3 + Typescript + Vite
+# Vue 3 + Typescript 自用后台框架
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+封装了 `svg`、`pinia`、`router`、`element-plus` 等功能
 
-## Recommended IDE Setup
+## `svg-icon`
+  | 使用
+  - 将准备好的 `svg` 文件保存到 `/src/assets/icons` 中
+  - 在使用到的地方
+    `<svg-icon name="shiba" width="28" height="28"></svg-icon>`
+    + `name`：与文件名相同即可 string类型
+    + `width`: 图标宽度 number类型
+    + `height`: 图标高度 number类型
+    + `color`: 图标颜色（可能会失效）string类型
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## `pinia`
+ | [中文文档](https://baimingxuan.net/pinia-doc-cn/)
 
-## Type Support For `.vue` Imports in TS
+## `vue-router`
+ | [官方文档 v4.x](https://router.vuejs.org/zh/api/)
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+## `element-plus`
+ | [官方文档](https://element-plus.gitee.io/zh-CN/component/button.html)
+
+### 布局
+  - 基础布局`basisTemplate` 路径`src/layout/BasisTemplate.vue`
+  - 基础布局`errorTemplate` 路径`src/layout/ErrorTemplate.vue`
+
+### 样式
+  - 使用 `normalize.css` 初始化页面样式 
+  - 全局自动导入样式 `/src/assets/styles/base.scss` 使用样式变量
