@@ -1,4 +1,4 @@
-# Vue 3 + Typescript 自用后台框架
+# Vue 3 + Typescript 自用后台模板
 
 封装了 `svg`、`pinia`、`router`、`element-plus` 等功能
 
@@ -6,7 +6,7 @@
   | 使用
   - 将准备好的 `svg` 文件保存到 `/src/assets/icons` 中
   - 在使用到的地方
-    `<svg-icon name="shiba" width="28" height="28"></svg-icon>`
+    `<svg-icon name="great" :width="28" :height="28"></svg-icon>`
     + `name`：与文件名相同即可 string类型
     + `width`: 图标宽度 number类型
     + `height`: 图标高度 number类型

@@ -6,7 +6,7 @@
       <span>日文名：柴犬（读音：Shibainu）</span>
       <span>点赞数：{{state.count}}</span>
       <el-button @click="handleClick" type="primary" round>
-        <svg-icon name="great" width="28" height="28"></svg-icon>
+        <svg-icon name="great" :width="28" :height="28"></svg-icon>
         点赞
       </el-button>
     </el-space>

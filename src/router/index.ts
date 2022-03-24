@@ -13,14 +13,19 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../view/home.vue')
       },
       {
-        path: '/about',
+        path: 'home',
+        name: 'home',
+        redirect: '/'
+      },
+      {
+        path: 'about',
         name: 'about',
         component: () => import('../view/about.vue')
       }
     ]
   },
   {
-    path: '/:w+',
+    path: '/:pathMatch(.*)',
     name: 'error',
     component: ErrorTemplate
   }

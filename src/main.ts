@@ -11,5 +11,6 @@ import SvgIcon from './components/SvgIcon/index.vue'
 
 // normalize.css
 import './assets/styles/normalize.scss'
+console.log(App);
 
 createApp(App).use(createPinia()).use(router).component('SvgIcon', SvgIcon).mount('#app')

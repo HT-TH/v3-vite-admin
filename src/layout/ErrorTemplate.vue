@@ -3,7 +3,10 @@
 </template>
 
 <script setup lang="ts">
-
+  import { useRoute } from 'vue-router';
+  const route = useRoute()
+  // 通配匹配到的路径
+  console.log(route.params.pathMatch);
 </script>
 
 <style lang="scss" scoped>
